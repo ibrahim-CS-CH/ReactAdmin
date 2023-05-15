@@ -1,10 +1,15 @@
-import { Datagrid, List, ReferenceField, TextField, SimpleList, EditButton } from 'react-admin';
+import { Datagrid, List, ReferenceField, TextField, SimpleList, EditButton, TextInput, ReferenceInput } from 'react-admin';
 import { useMediaQuery } from '@mui/material';
+//create search input to make some feature for user
+const postFilter = [
+    <TextInput source='q' label={"saerch"} alwaysOn/>,
+    <ReferenceInput source='userId' label='user' reference='users'/>
+];
 
 export const PostList = () => {
     const media = useMediaQuery((theme) => theme.breakpoints.down("sm"));
     return (
-        <List>
+        <List filters={postFilter}>
             {media 
                 ? (
                     <SimpleList 

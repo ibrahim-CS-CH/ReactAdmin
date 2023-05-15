@@ -1,4 +1,3 @@
-import React from "react";
 import { SimpleForm, TextInput, Edit } from "react-admin";
 export const EditUsers = () => (
     <Edit>
