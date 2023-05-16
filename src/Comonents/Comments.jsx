@@ -1,10 +1,10 @@
-import { Datagrid, List, ReferenceField, TextField, SimpleList, EditButton } from 'react-admin';
-import { useMediaQuery } from '@mui/material';
+import { Datagrid, List, TextField, SimpleList, EditButton, SavedQueriesList, FilterList, FilterLiveSearch, FilterListItem } from 'react-admin';
+import { Card, CardContent, useMediaQuery } from '@mui/material';
 export const Comments = () => {
     // const media = useMediaQuery((theme) => theme.breakpoints.down("sm"));
     const media = useMediaQuery((theme) => theme.breakpoints.down("sm"));
   return (
-    <List>
+    <List aside={<FilterSidebar />}>
         {media ? 
             (
                 <SimpleList 
@@ -25,3 +25,23 @@ export const Comments = () => {
     </List>
   )
 }
+
+
+//structure to build aside bar in ReactAdmin 
+const FilterSidebar = () => (
+    <Card className='bg-red-200'>
+        <CardContent className=' '>
+            <SavedQueriesList />
+
+
+            <FilterList label='search' >
+                <FilterListItem label={"name"} value={{ 'comments':"name" }}  />
+                <FilterListItem label={"no"} value={"asd"}  />
+            </FilterList>
+
+            <FilterList label='DSA'> 
+
+            </FilterList>
+        </CardContent>
+    </Card>
+)

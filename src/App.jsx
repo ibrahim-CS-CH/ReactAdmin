@@ -7,13 +7,13 @@ import { EditUsers } from "./Comonents/EditUsers";
 import { Comments } from "./Comonents/Comments";
 import { EditComment } from "./Comonents/EditComment";
 import { PostCreate } from "./Comonents/PostCreate";
-const dataProvider = jsonServerProvider('https://jsonplaceholder.typicode.com');
 import PostIcon from "@mui/icons-material/Book";
 import UserIcon from "@mui/icons-material/Group";
 import CommentIcon from '@mui/icons-material/Comment';
 import { Dashboard } from "./Pages/Dashboard";
 // import { authProvider } from "./Auth/authProvider";
 
+const dataProvider = jsonServerProvider('https://jsonplaceholder.typicode.com');
 
 const App = () => (
   //put these line as an att authProvider={authProvider }

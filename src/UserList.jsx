@@ -30,7 +30,7 @@
 
 //change from grid sys to list useMediaQuery from @mui/material
 import { useMediaQuery } from '@mui/material';
-import { List, SimpleList, Datagrid, TextField, EmailField, UrlField, EditButton, TextInput } from "react-admin";
+import { List, SimpleList, Datagrid, TextField, EmailField, UrlField, EditButton, TextInput, useGetOne, Loading } from "react-admin";
 import MyUrlField from './Comonents/MyUrlField';
 
 
@@ -41,7 +41,6 @@ const userFilter = [
 ]
 export const UserList = () => {
   const media = useMediaQuery((theme) => theme.breakpoints.down("sm"));
-
   return (
    
     <List filters={userFilter}>
@@ -70,3 +69,17 @@ export const UserList = () => {
     </List>
   )
 }
+
+// const OneUser = ({userId}) => {
+//   const {data: user, isLoading, error} = useGetOne('users', {id: userId})
+//   if(isLoading) return <Loading />
+//   if(error) return <p>Error</p>
+//   return (
+//     <ul>
+//       <li>{user.name}</li>
+//       <li>{user.email}</li>
+//     </ul>
+//   )
+
+
+// }
